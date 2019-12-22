@@ -2,7 +2,7 @@ import aiohttp
 import aioreloader
 import asyncio
 import argparse
-from demo import create_app
+from demo import create_app, load_config
 import logging
 logging.basicConfig(format="%(asctime)s: %(levelname)s: %(message)s",
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -28,13 +28,19 @@ parser.add_argument(
 	'--reload', 
 	action='store_true',   #не требовать аргумент
 	help='Autoreload code on change')
+parser.add_argument(
+	'-c',
+	'--config',
+	type=argparse.FileType('r'),
+	help='Path to configuration file')
+
 args = parser.parse_args()
 
 def main():
 	if args.reload:
 		aioreloader.start()
 		logging.warning('Autoreload is started')
-	app = create_app()
+	app = create_app(config=load_config(args.config))
 	aiohttp.web.run_app(app, host=args.host, port=args.port)
 
 if __name__ == '__main__':
