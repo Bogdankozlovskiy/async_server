@@ -1,0 +1,8 @@
+asyncio
+aiohttp
+aiohttp_jinja2
+jinja2
+uvloop
+argparse
+aioreloader
+logging
