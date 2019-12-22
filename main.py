@@ -13,7 +13,7 @@ try:
 except ImportError:
 	logging.warning('uvloop is not allowed')
 else:
-	logging.warning('uvloop is imported successful')
+	logging.warning('uvloop is loaded successful')
 
 parser = argparse.ArgumentParser(description="Best project")
 parser.add_argument(

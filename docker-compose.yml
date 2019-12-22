@@ -4,10 +4,10 @@ services:
   web:
     build:
       context: .
-      dockerfile: compose/dockerfile
+      dockerfile: compose/Dockerfile
     container_name: async_web
     volumes:
       - .:/src
     ports:
       - 8080:8080
-    command: ['sh', '-c', 'python main.py --host 0.0.0.0 --port 8080 --reload']
+    command: ['sh', '-c', 'python3 main.py --host 0.0.0.0 --port 8080 --reload']
