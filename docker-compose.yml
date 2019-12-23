@@ -19,6 +19,8 @@ services:
     container_name: psql_db
     env_file:
       - ./compose/db_keys
+    volumes:
+      - .:/home
 
   adminer:
     image: adminer
