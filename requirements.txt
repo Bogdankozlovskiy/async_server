@@ -18,7 +18,7 @@ MarkupSafe==1.1.1
 multidict==4.7.2
 pycrypto==2.6.1
 pygobject==3.26.1
-pyxdg==0.25
+pyxdg==0.26
 PyYAML==5.2
 SecretStorage==2.3.1
 six==1.11.0
