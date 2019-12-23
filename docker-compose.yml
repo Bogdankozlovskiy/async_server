@@ -9,5 +9,19 @@ services:
     volumes:
       - .:/src
     ports:
-      - 8080:8080
-    command: ['sh', '-c', 'python3 main.py --host 0.0.0.0 --port 8080 --reload']
+      - 8000:8000
+    env_file:
+      - ./compose/db_keys
+    command: ['sh', '-c', 'python3 main.py --host 0.0.0.0 --port 8000 --reload']
+
+  db:
+    image: postgres
+    container_name: psql_db
+    env_file:
+      - ./compose/db_keys
+
+  adminer:
+    image: adminer
+    container_name: async_admin
+    ports:
+      - "8080:8080"

@@ -1,2 +1,3 @@
 #our default configuration file
 site_name: 'Async site'
+database_uri: postgresql://bogdan:password@db:5432/async_db
