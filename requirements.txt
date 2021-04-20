@@ -4,7 +4,7 @@ aioreloader==0.2.2
 asn1crypto==0.24.0
 async-timeout==3.0.1
 asyncio==3.4.3
-asyncpg==0.20.0
+asyncpg==0.21.0
 asyncpgsa==0.26.1
 attrs==19.3.0
 chardet==3.0.4
